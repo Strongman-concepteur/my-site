@@ -1,0 +1,97 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.header {
+  background: linear-gradient(135deg, #004aad, #0077b6);
+  color: white;
+  padding: 20px;
+  border-bottom: 4px solid #022c5a;
+}
+
+.titre-principal {
+  font-size: 28px;
+  font-style: italic;
+  margin: 5px 0;
+}
+
+.sous-titre {
+  font-size: 16px;
+  margin: 2px 0;
+}
+
+.titre-ecole {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.portail {
+  font-size: 20px;
+  font-style: italic;
+  margin-top: 5px;
+  color: #ffe600;
+}
+
+.menu {
+  margin: 20px;
+}
+
+.menu button {
+  margin: 10px;
+  padding: 10px 20px;
+  background: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.menu button:hover {
+  background: #005f87;
+}
+
+.btn-inscrire {
+  background: #ff5733;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 12px;
+}
+
+.section {
+  margin: 30px auto;
+  padding: 20px;
+  width: 70%;
+  background: white;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  border-radius: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+form input, form select, form button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background: #0077b6;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #005f87;
+}

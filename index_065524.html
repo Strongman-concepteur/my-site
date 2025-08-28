@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Portail d'Inscription - Complexe La Patience</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ecran d'accueil -->
+  <header class="header">
+    <h1 class="titre-principal"><i>République Démocratique du Congo</i></h1>
+    <h2 class="sous-titre">Ministère de l'Education Nationale et Nouvelle Citoyenneté</h2>
+    <h3 class="sous-titre">PROVINCE EDUCATIONNELLE KWILU II</h3>
+    <h3 class="sous-titre">Sous-Province Éducationnelle Kikwit 2</h3>
+    <h1 class="titre-ecole">COMPLEXE SCOLAIRE LA PATIENCE</h1>
+    <p class="sous-titre">B.P : 343/KIKWIT</p>
+    <h2 class="portail">PORTAIL D'INSCRIPTION</h2>
+  </header>
+
+  <!-- Boutons Accueil -->
+  <div class="menu">
+    <button onclick="showSection('apropos')">En savoir plus</button>
+    <button onclick="showSection('mission')">Mission</button>
+    <button onclick="showSection('historique')">Bref historique</button>
+    <button onclick="showSection('politique')">Politique</button>
+    <button onclick="showSection('options')">Options organisées</button>
+    <button class="btn-inscrire" onclick="showSection('form-eleve')">S'inscrire</button>
+    <button onclick="showSection('liste')">Liste des élèves inscrits</button>
+  </div>
+
+  <!-- Sections dynamiques -->
+  <main id="content">
+    <section id="apropos" class="section hidden">
+      <h2>À propos</h2>
+      <p>Le Complexe scolaire La Patience est une école de référence qui vise l’excellence dans la formation des élèves, tant sur le plan intellectuel que moral.</p>
+    </section>
+
+    <section id="mission" class="section hidden">
+      <h2>Mission</h2>
+      <p>L’école a pour mission d’éduquer, former et encadrer les jeunes pour bâtir une société responsable et citoyenne.</p>
+    </section>
+
+    <section id="historique" class="section hidden">
+      <h2>Historique</h2>
+      <p>Créée dans les années 2000, l’école a accueilli des milliers d’élèves et s’est imposée comme une institution éducative de qualité.</p>
+    </section>
+
+    <section id="politique" class="section hidden">
+      <h2>Politique de l'école</h2>
+      <p>L’école met l’accent sur l’enseignement, la discipline, la culture et les valeurs citoyennes. Elle favorise également les activités parascolaires.</p>
+    </section>
+
+    <section id="options" class="section hidden">
+      <h2>Options organisées</h2>
+      <ul>
+        <li><b>Commerciale et Gestion :</b> Prépare les élèves à la comptabilité et la gestion.</li>
+        <li><b>Pédagogie :</b> Forme les futurs enseignants.</li>
+        <li><b>Construction :</b> Donne des bases solides en génie civil et bâtiment.</li>
+      </ul>
+    </section>
+
+    <!-- Formulaire Inscription Etape 1 -->
+    <section id="form-eleve" class="section hidden">
+      <h2>Renseignements Élève</h2>
+      <form id="eleveForm">
+        <input type="text" placeholder="Nom" required>
+        <input type="text" placeholder="Postnom" required>
+        <input type="text" placeholder="Prénom" required>
+        <select required>
+          <option value="">-- Sexe --</option>
+          <option>Masculin</option>
+          <option>Féminin</option>
+        </select>
+        <input type="email" placeholder="Adresse mail" required>
+        <input type="tel" placeholder="Numéro de téléphone" required>
+        <input type="text" placeholder="Lieu de naissance" required>
+        <input type="date" required>
+        <input type="text" placeholder="École de provenance" required>
+        <select required>
+          <option value="">-- Option --</option>
+          <option>Commerciale et gestion</option>
+          <option>Pédagogie</option>
+          <option>Construction</option>
+        </select>
+        <label>Dossier complet (PDF) :</label>
+        <input type="file" accept=".pdf" required>
+        <button type="button" onclick="nextForm('form-tuteur')">Suivant</button>
+      </form>
+    </section>
+
+    <!-- Formulaire Tuteur Etape 2 -->
+    <section id="form-tuteur" class="section hidden">
+      <h2>Renseignements Tuteur</h2>
+      <form id="tuteurForm">
+        <input type="text" placeholder="Nom" required>
+        <input type="text" placeholder="Postnom" required>
+        <input type="text" placeholder="Prénom" required>
+        <select required>
+          <option value="">-- Sexe --</option>
+          <option>Masculin</option>
+          <option>Féminin</option>
+        </select>
+        <input type="text" placeholder="Profession" required>
+        <input type="tel" placeholder="Contact" required>
+        <input type="text" placeholder="Adresse" required>
+        <input type="email" placeholder="Mail" required>
+        <button type="button" onclick="prevForm('form-eleve')">Retour</button>
+        <button type="button" onclick="nextForm('form-paiement')">Suivant</button>
+      </form>
+    </section>
+
+    <!-- Formulaire Paiement Etape 3 -->
+    <section id="form-paiement" class="section hidden">
+      <h2>Mode de paiement</h2>
+      <form id="paiementForm">
+        <label><input type="radio" name="mode" value="M-pesa"> M-pesa</label>
+        <label><input type="radio" name="mode" value="Orange money"> Orange money</label>
+        <label><input type="radio" name="mode" value="Afrimoney"> Afrimoney</label>
+        <label><input type="radio" name="mode" value="Airtel money"> Airtel money</label>
+        <button type="button" onclick="prevForm('form-tuteur')">Retour</button>
+        <button type="button" onclick="nextForm('form-compte')">Suivant</button>
+      </form>
+    </section>
+
+    <!-- Formulaire Infos Compte Etape 4 -->
+    <section id="form-compte" class="section hidden">
+      <h2>Veuillez saisir les informations de votre compte</h2>
+      <form id="compteForm">
+        <input type="tel" placeholder="Numéro de téléphone" required>
+        <input type="number" placeholder="Paiement en CDF" required>
+        <input type="number" placeholder="Paiement en USD" required>
+        <input type="number" placeholder="Montant" required>
+        <button type="button" onclick="prevForm('form-paiement')">Retour</button>
+        <button type="button" onclick="validerInscription()">Valider</button>
+      </form>
+    </section>
+
+    <!-- Liste élèves -->
+    <section id="liste" class="section hidden">
+      <h2>Liste des élèves inscrits</h2>
+      <ul id="elevesList"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
